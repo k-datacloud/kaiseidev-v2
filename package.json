@@ -1,0 +1,15 @@
+{
+  "name": "kaiseidev-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "kaiseidev.js",
+  "scripts": {
+    "sass": "sass src/style.scss dist/style.css -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.87.0"
+  }
+}
