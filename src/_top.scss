@@ -816,6 +816,20 @@ body {
             @include respond-to(lg) {
                 display: block;
                 font-size: calc(18/16 * 1rem);
+                white-space: nowrap;
+                padding: 0 calc(8/16 * 1rem);
+                transform: translateX(0);
+                will-change: transform;
+                animation: footerTextLoop 6s linear infinite;
+
+                @keyframes footerTextLoop {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-100%);
+                    }
+                }
             }
         }
     }
@@ -861,6 +875,12 @@ body {
                 }
             }
         }
+    }
+
+    .footer-text-loop {
+        display: flex;
+        width: 160px;
+        overflow: hidden;
     }
 
     .footer-list-media {
