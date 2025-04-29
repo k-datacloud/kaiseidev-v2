@@ -296,6 +296,21 @@ body {
         &--scroll {
             display: flex;
             align-items: center;
+            width: fit-content;
+            position: relative;
+            overflow: hidden;
+
+            @include respond-to(lg) {
+                cursor: pointer;
+                
+                &:hover .hero-arrow--hidden {
+                    transform: translate(0);
+                }
+
+                &:hover .hero-arrow--visible {
+                    transform: translate(30px,100%);
+                }
+            }
         }
     }
 
@@ -342,7 +357,18 @@ body {
     .hero-arrow {
         width: 30px;
         aspect-ratio: 1/1;
+        transition: transform 0.7s ease;
+        will-change: transform;
 
+        &--visible {
+            transform: translateY(0);
+        }
+
+        &--hidden {
+            position: absolute;
+            right: 0;
+            transform: translate(-30px,-100%);
+        }
     }
 }
 
@@ -816,6 +842,7 @@ body {
             @include respond-to(lg) {
                 display: block;
                 font-size: calc(18/16 * 1rem);
+                color: #ececec;
                 white-space: nowrap;
                 padding: 0 calc(8/16 * 1rem);
                 transform: translateX(0);
@@ -881,6 +908,7 @@ body {
         display: flex;
         width: 160px;
         overflow: hidden;
+        background-color: #222222;
     }
 
     .footer-list-media {

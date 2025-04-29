@@ -283,6 +283,20 @@ body {
 .hero__text--scroll {
   display: flex;
   align-items: center;
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .hero__text--scroll {
+    cursor: pointer;
+  }
+  .hero__text--scroll:hover .hero-arrow--hidden {
+    transform: translate(0);
+  }
+  .hero__text--scroll:hover .hero-arrow--visible {
+    transform: translate(30px, 100%);
+  }
 }
 .hero__link {
   font-family: "Work Sans", sans-serif;
@@ -328,6 +342,16 @@ body {
 .hero .hero-arrow {
   width: 30px;
   aspect-ratio: 1/1;
+  transition: transform 0.7s ease;
+  will-change: transform;
+}
+.hero .hero-arrow--visible {
+  transform: translateY(0);
+}
+.hero .hero-arrow--hidden {
+  position: absolute;
+  right: 0;
+  transform: translate(-30px, -100%);
 }
 
 .message {
@@ -788,6 +812,7 @@ body {
   .footer__text--available {
     display: block;
     font-size: 1.125rem;
+    color: #ececec;
     white-space: nowrap;
     padding: 0 0.5rem;
     transform: translateX(0);
@@ -852,6 +877,7 @@ body {
   display: flex;
   width: 160px;
   overflow: hidden;
+  background-color: #222222;
 }
 .footer .footer-list-media {
   display: flex;
