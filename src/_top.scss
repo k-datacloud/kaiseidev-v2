@@ -112,23 +112,26 @@ body {
 
                 @include respond-to(lg) {
                     opacity: 1;
-                    transition: opacity 0.2s;
-                    will-change: opacity;
+                    transition: opacity 0.2s ease;
+                    will-change: opacity, font-size;
 
-                    &:hover {
-                        opacity: 0.8;
+                    &:hover .dot {
+                        background-color: #222222;
                     }
                 }
             }
 
             .dot {
                 display: inline-block;
-                width: 4px;
-                height: 4px;
+                width: 5px;
+                height: 5px;
                 aspect-ratio: 1/1;
-                background-color: #222222;
+                border: solid 1px #222222;
+                background-color: rgba($color: #222222, $alpha: 0);
                 border-radius: 50%;
                 margin-right: calc(6/16 * 1rem);
+                transition: background-color 0.4s ease;
+                will-change: background-color;
             }
         }
     }
@@ -490,6 +493,7 @@ body {
         .dot {
             display: inline-block;
             width: 5px;
+            height: 5px;
             aspect-ratio: 1/1;
             background-color: #222222;
             border-radius: 50%;
